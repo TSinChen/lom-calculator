@@ -1,11 +1,11 @@
 import { Fragment, useState } from 'react'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 import Form from './components/Form/Form'
 import GITHUB_ICON from './assets/icons/github.png'
 
 ReactGA.initialize('G-B8P7WD2PGR')
-ReactGA.pageview(window.location.pathname + window.location.search)
+ReactGA.send('pageview')
 
 const App = () => {
   const [result, setResult] = useState('填完入伍日期還有折抵天數後就按下計算吧！')
