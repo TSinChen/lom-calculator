@@ -111,3 +111,20 @@ html {
 .result {
   white-space: pre-wrap;
 }
+
+.github {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  opacity: 0.75;
+  transition: all 0.1s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  img {
+    width: 100%;
+  }
+}
