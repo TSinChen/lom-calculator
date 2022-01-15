@@ -74,63 +74,67 @@ const Form = ({ setResult }: Props) => {
 
   return (
     <form className="form">
-      <div className="form__date__inputs">
-        <label className="form__date__inputs__label" htmlFor="year">
+      <div className="form__block">
+        <label className="form__block__label" htmlFor="year">
           入伍日期
         </label>
-        <select
-          className="form__date__inputs__input"
-          id="year"
-          name="year"
-          value={year}
-          onChange={(e) => setYear(Number(e.target.value))}
-        >
-          {YEAR_OPTIONS.map((year) => (
-            <option key={year} value={year}>
-              {year}
-            </option>
-          ))}
-        </select>
-        年
-        <select
-          className="form__date__inputs__input"
-          name="month"
-          value={month}
-          onChange={(e) => setMonth(Number(e.target.value))}
-        >
-          {MONTH_OPTIONS.map((month) => (
-            <option key={month} value={month}>
-              {month + 1}
-            </option>
-          ))}
-        </select>
-        月
-        <select
-          className="form__date__inputs__input"
-          name="date"
-          value={date}
-          onChange={(e) => setDate(Number(e.target.value))}
-        >
-          {dateOptions.map((date) => (
-            <option key={date}>{date + 1}</option>
-          ))}
-        </select>
-        日
+        <div className="form__block__inputs">
+          <select
+            className="form__block__inputs__input"
+            id="year"
+            name="year"
+            value={year}
+            onChange={(e) => setYear(Number(e.target.value))}
+          >
+            {YEAR_OPTIONS.map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
+          年
+          <select
+            className="form__block__inputs__input"
+            name="month"
+            value={month}
+            onChange={(e) => setMonth(Number(e.target.value))}
+          >
+            {MONTH_OPTIONS.map((month) => (
+              <option key={month} value={month}>
+                {month + 1}
+              </option>
+            ))}
+          </select>
+          月
+          <select
+            className="form__block__inputs__input"
+            name="date"
+            value={date}
+            onChange={(e) => setDate(Number(e.target.value))}
+          >
+            {dateOptions.map((date) => (
+              <option key={date}>{date + 1}</option>
+            ))}
+          </select>
+          日
+        </div>
       </div>
-      <div className="form__date__inputs">
-        <label className="form__date__inputs__label" htmlFor="discount">
+      <div className="form__block">
+        <label className="form__block__label" htmlFor="discount">
           折抵天數
         </label>
-        <select
-          className="form__date__inputs__input"
-          id="discount"
-          value={discount}
-          onChange={(e) => setDiscount(Number(e.target.value))}
-        >
-          {DISCOUNT_OPTIONS.map((discount) => (
-            <option key={discount}>{discount}</option>
-          ))}
-        </select>
+        <div className="form__block__inputs">
+          <select
+            className="form__block__inputs__input"
+            id="discount"
+            value={discount}
+            onChange={(e) => setDiscount(Number(e.target.value))}
+          >
+            {DISCOUNT_OPTIONS.map((discount) => (
+              <option key={discount}>{discount}</option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className="form__submit" onClick={handleSubmit}>
         計算
