@@ -4,4 +4,10 @@
       @content;
     }
   }
+
+  @if $breakpoint == s {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
 }

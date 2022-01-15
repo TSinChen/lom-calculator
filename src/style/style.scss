@@ -16,15 +16,14 @@ html {
 }
 
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   display: flex;
   background-color: $background-color-container;
+  max-width: 500px;
+  min-width: 350px;
+  margin: 100px auto;
   padding: 0 20px;
   border-radius: 10px;
   box-shadow: 10px 12px 48px 32px $background-color-html;
-  transform: translate(-50%, -70%);
   flex-direction: column;
 
   > * {
@@ -45,6 +44,10 @@ html {
   min-width: 400px;
   flex-direction: column;
   border-bottom: 1px solid #fff;
+
+  @include respond(s) {
+    min-width: 300px;
+  }
 
   &__block {
     display: flex;
@@ -113,7 +116,7 @@ html {
 }
 
 .github {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   width: 45px;
