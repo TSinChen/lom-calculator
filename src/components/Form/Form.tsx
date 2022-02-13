@@ -37,6 +37,13 @@ const Form = ({ setResult }: Props) => {
       .add(112, 'day')
       .subtract(discount, 'day')
       .subtract(1, 'day')
+    let workDayCount = 0
+    for (let i = 0; i <= endDate.diff(TODAY, 'day'); i++) {
+      const currentDate = TODAY.add(i, 'day')
+      if (currentDate.day() > 0 && currentDate.day() < 6) {
+        workDayCount++
+      }
+    }
     if (endDate.isBefore(dayjs())) {
       setResult(`你已經在 ${endDate.format('YYYY 年 MM 月 DD 日')}退伍了！`)
     } else {
@@ -44,7 +51,7 @@ const Form = ({ setResult }: Props) => {
         `你將會在 ${endDate.format('YYYY 年 MM 月 DD 日')}回歸自由，\n距離那天還有 ${endDate.diff(
           TODAY,
           'day',
-        )} 天！`,
+        )} 天！\n在營天數還有 ${workDayCount} 天！（未扣除國定假日）`,
       )
     }
   }
