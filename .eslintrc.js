@@ -27,5 +27,6 @@ module.exports = {
     'no-trailing-spaces': 'warn',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'prefer-const': 'off',
   },
 }
